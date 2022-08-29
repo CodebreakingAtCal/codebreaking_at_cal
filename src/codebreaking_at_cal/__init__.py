@@ -1,3 +1,3 @@
-from codebreaking_at_cal.caesar import * 
-from codebreaking_at_cal.utils import *
-from codebreaking_at_cal.vignere import * 
+from .caesar import * 
+from .utils import *
+from .vignere import * 
