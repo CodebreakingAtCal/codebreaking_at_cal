@@ -16,3 +16,21 @@ def tvd(freq1, freq2):
     diff = abs(freq1 - freq2)
     return sum(diff)/2
     # END SOLUTION
+
+def pad_key(key, length):
+    key = clean_text(key)
+    # BEGIN SOLUTION
+    newkey = ""
+    k = 0
+    while len(newkey) < length:
+        newkey += key[k]
+        k+=1
+        k%=len(key)
+    return newkey
+    # END SOLUTION
+
+def shift_letter(char, shift):
+    if not char.isalpha():
+        return char
+    else:
+        return num_to_char((char_to_num(char) + shift) % 26) 
