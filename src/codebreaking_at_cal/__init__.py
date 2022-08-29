@@ -1,3 +1,3 @@
-from codebreaking_at_cal import caesar 
-from codebreaking_at_cal import utils
-from codebreaking_at_cal import vignere
+from codebreaking_at_cal.caesar import * 
+from codebreaking_at_cal.utils import *
+from codebreaking_at_cal.vignere import * 

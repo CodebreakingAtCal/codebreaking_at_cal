@@ -1,4 +1,4 @@
-import utils
+import codebreaking_at_cal.utils
 import numpy as np
 
 alphabet = "abdcedfghijklmnopqrstuvwxyz"
