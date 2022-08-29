@@ -1,4 +1,4 @@
-import codebreaking_at_cal.utils
+from .utils import * 
 import numpy as np
 
 alphabet = "abdcedfghijklmnopqrstuvwxyz"
@@ -33,17 +33,17 @@ english_frequencies = {
 np_english_frequencies = np.fromiter(english_frequencies.values(), dtype=float)
 
 def caesar_encrypt(plaintext, shift):
-    plaintext = utils.clean_text(plaintext)
+    plaintext = clean_text(plaintext)
     encrypted = ""
     for i in range(len(plaintext)):
-        encrypted += utils.shift_letter(plaintext[i], shift)
+        encrypted += shift_letter(plaintext[i], shift)
     return encrypted
 
 def caesar_decrypt(ciphertext, shift):
-    ciphertext = utils.clean_text(ciphertext)
+    ciphertext = clean_text(ciphertext)
     decrypted = ""
     for i in range(len(ciphertext)):
-        decrypted += utils.shift_letter(ciphertext[i], -shift)
+        decrypted += shift_letter(ciphertext[i], -shift)
     return decrypted
 
 def count_letters(text):
@@ -73,7 +73,7 @@ def find_best_shift(ciphertext):
     for i in range(26):
         shifted = caesar_decrypt(ciphertext, i)
         shifted_freqs = calculate_proportions(shifted)
-        result_tvd = utils.tvd(np_english_frequencies, shifted_freqs)
+        result_tvd = tvd(np_english_frequencies, shifted_freqs)
         
         if (result_tvd < best_tvd):
             best_shift = i

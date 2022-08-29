@@ -1,5 +1,5 @@
-from codebreaking_at_cal.caesar import * 
-from codebreaking_at_cal.utils import *
+from .caesar import * 
+from .utils import *
 from collections import defaultdict
 
 MAX_KEYLENGTH = 20
