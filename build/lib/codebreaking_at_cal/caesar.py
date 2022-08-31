@@ -52,11 +52,13 @@ def count_letters(text):
     text = text.lower()
     for letter in alphabet:
         counts[letter] = 0
+    # BEGIN SOLUTION
     for letter in text:
         if (letter in alphabet):
             counts[letter] += 1
     
     return counts
+    # END SOLUTION
 
 def calculate_proportions(text): # Coded for you
     counts = count_letters(text).values()
@@ -64,6 +66,7 @@ def calculate_proportions(text): # Coded for you
     return nparr / sum(counts)
 
 def find_best_shift(ciphertext):
+    # BEGIN SOLUTION
     best_shift = 0
     best_tvd = 100
     

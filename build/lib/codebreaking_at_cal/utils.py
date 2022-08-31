@@ -8,15 +8,18 @@ def num_to_char(num):
     return chr(num + 97).lower()
 
 def clean_text(text):
-    return re.sub('[^A-Za-z\s!?., $]*', '', text.lower())
+    return re.sub('[^A-Za-z\s!?.,$]*', '', text.lower())
 
 def tvd(freq1, freq2):
     # Takes in two numpy arrays of length 26.
+    # BEGIN SOLUTION
     diff = abs(freq1 - freq2)
     return sum(diff)/2
+    # END SOLUTION
 
 def pad_key(key, length):
     key = clean_text(key)
+    # BEGIN SOLUTION
     newkey = ""
     k = 0
     while len(newkey) < length:
@@ -24,6 +27,7 @@ def pad_key(key, length):
         k+=1
         k%=len(key)
     return newkey
+    # END SOLUTION
 
 def shift_letter(char, shift):
     if not char.isalpha():
