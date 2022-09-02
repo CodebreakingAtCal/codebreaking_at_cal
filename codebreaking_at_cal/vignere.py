@@ -4,12 +4,13 @@ import itertools
 from collections import defaultdict
 import csv
 import random
+import os
 
 MAX_KEYLENGTH = 20
 
 words = []
 
-with open("./data/common_words.csv", "r") as csvfile:
+with open(os.path.join(os.path.dirname(__file__), '/data/common_words.csv'), "r") as csvfile:
     csvreader = csv.reader(csvfile)
     for word in csvreader:
         words.append(word)
