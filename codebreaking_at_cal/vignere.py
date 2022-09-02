@@ -42,20 +42,6 @@ def vignere_decrypt(ciphertext, key):
         decrypted += shift_letter(ciphertext[i], -char_to_num(padded_key[i]))
     return decrypted
 
-def test_vignere_cracker(func):
-    
-    for i in range(50):
-        chosenWords = random.sample(words, random.randint(100, 900))
-
-        text = ' '.join(chosenWords)
-
-        ciphertext = vignere_encrypt(text)
-
-        decrypted = func(ciphertext)
-
-        if decrypted != text:
-            print('incorrect!')
-
 import random, csv
 
 def test_vignere_cracker(func, iterations):
