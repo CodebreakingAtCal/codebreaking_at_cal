@@ -10,7 +10,7 @@ MAX_KEYLENGTH = 20
 
 words = []
 
-with open(os.path.join(os.path.dirname(__file__), '/data/common_words.csv'), "r") as csvfile:
+with open(os.path.join(os.path.dirname(__file__), 'common_words.csv'), "r") as csvfile:
     csvreader = csv.reader(csvfile)
     for word in csvreader:
         words.append(word)
