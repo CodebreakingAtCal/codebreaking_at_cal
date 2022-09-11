@@ -44,6 +44,9 @@ def vignere_decrypt(ciphertext, key):
 
 import random, csv
 
+def analyze_frequency(text):
+    return tvd(np_english_frequencies, calculate_proportions(text))
+
 def test_vignere_cracker(func, iterations):
     correct = 0
 
